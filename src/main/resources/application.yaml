@@ -1,0 +1,23 @@
+
+
+spring:
+    application:
+        name: spring-boot-opa-grpc
+
+management:
+    endpoints:
+        web:
+          exposure:
+            include: "*"
+
+opa:
+  url: http://localhost:8181/v1/data/httpapi/authz
+  path: finance,salary
+  method: GET
+
+grpc:
+  server:
+    port: 8787
+    reflection-service-enabled: true
+server:
+  port: 8585
